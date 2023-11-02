@@ -1,0 +1,296 @@
+; ------- Bome MIDI Translator: signed project file
+; ------- You can modify this file as you like, but that will invalidate the
+; ------- signature so that it cannot be opened in the BomeBox or MT Player anymore.
+;
+[Preset.0]
+Active=1
+Comments=
+Incoming0=MID1F041100000005B1202004303xxyyF7
+Incoming1=MID1F041100000005B12020043030038F7
+Name=ANALOG KNOBS2CC ON|OFF
+Name0=ANALOG KNOBS2CC OFF when Analog filter ON
+Name1=ANALOG KNOBS2CC ON when Analog filter OFF
+Options0=Actv01Stop00OutO00StMa00000001if(xx==0)noexecute
+Options1=Actv01Stop00OutO00
+Outgoing0=Pres06000FANALOG KNOBS2CC
+Outgoing1=Pres04000FANALOG KNOBS2CC
+PresetSwitchIgnore=0
+
+[Preset.1]
+Active=1
+Comments=
+Incoming0=MID1F041100000005B120200430400xxyyzz00ssttuuvvF7
+Incoming1=MID1F041100000005B120200430C00xxyyzz00ssttuuvvF7
+Name=ANALOG KNOBS2CC
+Name0=Fantom SYSEX Analog filter (OFF) knob to CC74
+Name1=Fantom SYSEX Analog filter (OFF) res knob to CC71
+Options0=Actv01Stop01OutO00StMa0016xx=Cc output, yy=value0006label0027__cmt>// Calculating outoing value (yy)ss=ss*256tt=tt*16uu=uu+ssuu=uu+ttyy=uu/8
+Options1=Actv01Stop01OutO00StMa0016xx=Cc output, yy=value0006label0027__cmt>// Calculating outoing value (yy)ss=ss*256tt=tt*16uu=uu+ssuu=uu+ttyy=uu/8
+Outgoing0=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="z0"/><Value1 num="0x4A"/><Value2 var="yy"/></Simple></Outgoing>
+Outgoing1=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="z0"/><Value1 num="0x47"/><Value2 var="yy"/></Simple></Outgoing>
+PresetSwitchIgnore=0
+
+[Preset.2]
+Active=1
+Comments=
+Incoming0=MID1F041100000005B120200430400xxyyzz00ssttuuvvF7
+Incoming1=MID1F041100000005B120200430C00xxyyzz00ssttuuvvF7
+Incoming2=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel num="0" Type="Any"/><Value1 num="0x59"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming3=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel num="0" Type="Any"/><Value1 num="0x5A"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Name=ANALOG KNOBS2CC 89|90
+Name0=Fantom SYSEX Analog filter (OFF) knob to CC89
+Name1=Fantom SYSEX Analog filter (OFF) res knob to CC71
+Name2=CC89 to Analog CUTOFF
+Name3=CC90 to Analog RES
+Options0=Actv01Stop01OutO00StMa0016xx=Cc output, yy=value0006label0027__cmt>// Calculating outoing value (yy)ss=ss*256tt=tt*16uu=uu+ssuu=uu+ttyy=uu/8
+Options1=Actv01Stop01OutO00StMa0016xx=Cc output, yy=value0006label0027__cmt>// Calculating outoing value (yy)ss=ss*256tt=tt*16uu=uu+ssuu=uu+ttyy=uu/8
+Options2=Actv01Stop00OutO00StMa00000006yy=8*yyss=yy/256tt=yy/16tt=tt%16uu=yy%16vv=0
+Options3=Actv01Stop00OutO00StMa00000006yy=8*yyss=yy/256tt=yy/16tt=tt%16uu=yy%16vv=0
+Outgoing0=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="z0"/><Value1 num="0x59"/><Value2 var="yy"/></Simple></Outgoing>
+Outgoing1=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="z0"/><Value1 num="0x5A"/><Value2 var="yy"/></Simple></Outgoing>
+Outgoing2=MID1F041100000005B120200430400ssttuu00ssttuuvvF7
+Outgoing3=MID1F041100000005B120200430C00ssttuu00ssttuuvvF7
+PresetSwitchIgnore=0
+
+[Preset.3]
+Active=1
+Comments=
+Incoming0=MID1MIDD0035zz=zone pp=partial qq=param (ss,tt,uu)=value (vv=crc)F041100000005B1202zzppqq00ssttuuvvF7
+Incoming1=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 var="xx" Type="SetVar"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming2=MID1MIDD0035zz=zone pp=partial qq=param (ss,tt,uu)=value (vv=crc)F041100000005B1205zzppqq00ssttuuvvF7
+Incoming3=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 var="xx" Type="SetVar"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming4=MID1MIDD0035zz=zone pp=partial qq=param (ss,tt,uu)=value (vv=crc)F041100000005B1202zzpp00yyvvF7
+Incoming5=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 var="xx" Type="SetVar"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming6=MID1MIDD0035zz=zone pp=partial qq=param (ss,tt,uu)=value (vv=crc)F041100000005B1202000038rrssttuuvvF7
+Incoming7=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x12"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Name=SYSEX2CC
+Name0=Fantom SYSEX Cc# ZEN CORE
+Name1=Cc# to Fantom SYSEX ZEN CORE
+Name2=Fantom SYSEX Cc# MODEL & NZYME
+Name3=Cc# to Fantom SYSEX MODEL & NZYME
+Name4=Fantom SYSEX Cc# (AMP LVL)
+Name5=Cc# to Fantom SYSEX (AMP LVL)
+Name6=Fantom SYSEX TEMPO to Cc#
+Name7=Cc# to TEMPO SYSEX
+Options0=Actv01Stop01OutO00StMa0016xx=Cc output, yy=value0052xx=-1label0006__cmt>label0030__cmt>// On calcule la signature param + partieloo=qq*100oo=oo+pplabel0006__cmt>if(oo==6132)xx=12if(oo==6133)xx=13if(oo==6134)xx=14if(oo==6135)xx=15if(oo==5032)xx=19if(oo==5033)xx=20if(oo==5034)xx=21if(oo==5035)xx=22if(oo==444)xx=23if(oo==445)xx=24if(oo==446)xx=25if(oo==447)xx=26if(oo==1244)xx=27if(oo==1245)xx=28if(oo==1246)xx=29if(oo==1247)xx=30if(oo==2844)xx=31if(oo==2845)xx=32if(oo==2846)xx=33if(oo==2847)xx=34if(oo==1644)xx=35if(oo==1645)xx=36if(oo==1646)xx=37if(oo==1647)xx=39if(oo==840)xx=40if(oo==841)xx=41if(oo==842)xx=42if(oo==843)xx=43if(oo==1640)xx=44if(oo==1641)xx=45if(oo==1642)xx=46if(oo==1643)xx=47if(oo==3640)xx=48if(oo==3641)xx=49if(oo==3642)xx=50if(oo==3643)xx=51if(oo==2040)xx=52if(oo==2041)xx=53if(oo==2042)xx=54if(oo==2043)xx=55if(oo==836)xx=56if(oo==837)xx=57if(oo==838)xx=58if(oo==839)xx=59if(oo==1636)xx=60if(oo==1637)xx=61if(oo==1638)xx=62if(oo==1639)xx=63if(oo==3636)xx=85if(oo==3637)xx=86if(oo==3638)xx=87if(oo==3639)xx=88if(oo==2036)xx=102if(oo==2037)xx=103if(oo==2038)xx=104if(oo==2039)xx=105label0006__cmt>label001F__cmt>// Any other case we exitif(xx==-1)noexecutelabel0006__cmt>label0039__cmt>// The zone starts at 17. We decrease to start at 1zz=zz-16label0006__cmt>label0022__cmt>// Calculating outoing valuess=ss*256tt=tt*16uu=uu+ssuu=uu+ttyy=uu/8label0006__cmt>label004A__cmt>//Exception for Fil-Env S : starts from 128 (why Mr Roland, why?...)if(oo==3636)yy=yy-128if(oo==3637)yy=yy-128if(oo==3638)yy=yy-128if(oo==3639)yy=yy-128label0006__cmt>
+Options1=Actv01Stop01OutO00StMa0016xx=Cc number, yy=value0054label0027__cmt>// We evaluate the signature (oo)oo=-1label0006__cmt>if(xx==12)oo=6132if(xx==13)oo=6133if(xx==14)oo=6134if(xx==15)oo=6135if(xx==19)oo=5032if(xx==20)oo=5033if(xx==21)oo=5034if(xx==22)oo=5035if(xx==23)oo=444if(xx==24)oo=445if(xx==25)oo=446if(xx==26)oo=447if(xx==27)oo=1244if(xx==28)oo=1245if(xx==29)oo=1246if(xx==30)oo=1247if(xx==31)oo=2844if(xx==32)oo=2845if(xx==33)oo=2846if(xx==34)oo=2847if(xx==35)oo=1644if(xx==36)oo=1645if(xx==37)oo=1646if(xx==39)oo=1647if(xx==40)oo=840if(xx==41)oo=841if(xx==42)oo=842if(xx==43)oo=843if(xx==44)oo=1640if(xx==45)oo=1641if(xx==46)oo=1642if(xx==47)oo=1643if(xx==48)oo=3640if(xx==49)oo=3641if(xx==50)oo=3642if(xx==51)oo=3643if(xx==52)oo=2040if(xx==53)oo=2041if(xx==54)oo=2042if(xx==55)oo=2043if(xx==56)oo=836if(xx==57)oo=837if(xx==58)oo=838if(xx==59)oo=839if(xx==60)oo=1636if(xx==61)oo=1637if(xx==62)oo=1638if(xx==63)oo=1639if(xx==85)oo=3636if(xx==86)oo=3637if(xx==87)oo=3638if(xx==88)oo=3639if(xx==102)oo=2036if(xx==103)oo=2037if(xx==104)oo=2038if(xx==105)oo=2039label0006__cmt>if(oo==-1)noexecutelabel0006__cmt>qq=oo/100pp=oo%100label0006__cmt>label0022__cmt>// Calculating outoing valuelabel0006__cmt>label004A__cmt>//Exception for Fil-Env S : starts from 128 (why Mr Roland, why?...)if(oo==3636)yy=yy+128if(oo==3637)yy=yy+128if(oo==3638)yy=yy+128if(oo==3639)yy=yy+128label0006__cmt>yy=8*yyss=yy/256tt=yy/16tt=tt%16uu=yy%16label0006__cmt>label0053__cmt>// We skip CRC calculation since Fantom does not check for now (TODO later ?)vv=0label0006__cmt>label001B__cmt>// Zone# starts at 17zz=zz+16
+Options2=Actv01Stop01OutO00StMa0016xx=Cc output, yy=value001Dxx=-1label0006__cmt>label0030__cmt>// On calcule la signature param + partieloo=qq*100oo=oo+pplabel0006__cmt>label001E__cmt>// MODEL Cutoff and Resoif(oo==7900)xx=116if(oo==8300)xx=117label0006__cmt>label001F__cmt>// N/ZYME Cutoff and Resoif(oo==2004)xx=118if(oo==2404)xx=119label0006__cmt>label0006__cmt>label001F__cmt>// Any other case we exitif(xx==-1)noexecutelabel0006__cmt>label0039__cmt>// The zone starts at 33. We decrease to start at 1zz=zz%16label0006__cmt>label0022__cmt>// Calculating outoing valuess=ss*256tt=tt*16uu=uu+ssuu=uu+ttyy=uu/8label0006__cmt>label0006__cmt>
+Options3=Actv01Stop01OutO00StMa0016xx=Cc number, yy=value001Flabel0027__cmt>// We evaluate the signature (oo)oo=-1if(xx==116)oo=7900if(xx==117)oo=8300if(xx==118)oo=2004if(xx==119)oo=2404label0006__cmt>if(oo==-1)noexecutelabel0006__cmt>qq=oo/100pp=oo%100label0006__cmt>label0022__cmt>// Calculating outoing valuelabel0006__cmt>yy=8*yyss=yy/256tt=yy/16tt=tt%16uu=yy%16label0006__cmt>label0053__cmt>// We skip CRC calculation since Fantom does not check for now (TODO later ?)vv=0label0006__cmt>label0026__cmt>// Zone# starts at 32 form MODELif(oo==7900)zz=zz+32if(oo==8300)zz=zz+32label0006__cmt>label0026__cmt>// Zone# starts at 64 for N/ZYMEif(oo==2004)zz=zz+64if(oo==2404)zz=zz+64label0006__cmt>
+Options4=Actv01Stop01OutO00StMa0016xx=Cc output, yy=value000Cxx=-1label0006__cmt>if(pp==32)xx=106if(pp==33)xx=107if(pp==34)xx=108if(pp==35)xx=109label0006__cmt>label001F__cmt>// Any other case we exitif(xx==-1)noexecutelabel0006__cmt>label0039__cmt>// The zone starts at 17. We decrease to start at 1zz=zz-16
+Options5=Actv01Stop01OutO00StMa0016xx=Cc number, yy=value0010label0006__cmt>label0027__cmt>// We evaluate the signature (oo)pp=-1if(xx==106)pp=32if(xx==107)pp=33if(xx==108)pp=34if(xx==109)pp=35label0006__cmt>label0006__cmt>if(pp==-1)noexecutelabel0006__cmt>label002D__cmt>// We skip CRC calculation (TODO later)vv=0label0006__cmt>label001B__cmt>// Zone# starts at 17zz=zz+16
+Options6=Actv01Stop01OutO00StMa0009 yy=value0012label0006__cmt>yy=uulabel0006__cmt>tt=tt*16yy=yy+ttlabel0006__cmt>ss=ss*256yy=yy+sslabel0006__cmt>rr=rr*4096yy=yy+rryy=yy/200label0006__cmt>label001D__cmt>//if yy < 0 then yy = 0if(yy>127)yy=127label0006__cmt>label0006__cmt>zz=0
+Options7=Actv01Stop00OutO00StMa0000000Dyy=yy*200label0006__cmt>uu=yy%16label0006__cmt>tt=yy/16tt=tt%16label0006__cmt>ss=yy/256ss=ss%16label0006__cmt>rr=yy/4096label0006__cmt>vv=0
+Outgoing0=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 var="xx"/><Value2 var="yy"/></Simple></Outgoing>
+Outgoing1=MID1MIDD0035zz=zone pp=partial qq=param (ss,tt,uu)=value (vv=crc)F041100000005B1202zzppqq00ssttuuvvF7
+Outgoing2=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 var="xx"/><Value2 var="yy"/></Simple></Outgoing>
+Outgoing3=MID1MIDD0035zz=zone pp=partial qq=param (ss,tt,uu)=value (vv=crc)F041100000005B1205zzppqq00ssttuuvvF7
+Outgoing4=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 var="xx"/><Value2 var="yy"/></Simple></Outgoing>
+Outgoing5=MID1MIDD0035zz=zone pp=partial qq=param (ss,tt,uu)=value (vv=crc)F041100000005B1202zzpp00yyvvF7
+Outgoing6=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x12"/><Value2 var="yy"/></Simple></Outgoing>
+Outgoing7=MID1F041100000005B1202000038rrssttuuvvF7
+PresetSwitchIgnore=0
+
+[Preset.4]
+Active=1
+Comments=
+Incoming0=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x50"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming1=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x50"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming2=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x50"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming3=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x50"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming4=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x50"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming5=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x51"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming6=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x52"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Incoming7=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x5F"/><Value2 var="yy" Type="SetVar"/></Simple></Incoming>
+Name=CC2MFX CTRL
+Name0=Cc#80 -> MFX On/Off (Z-Core)
+Name1=Cc#80 -> MFX On/Off (VPiano)
+Name2=Cc#80 -> MFX On/Off (S/N)
+Name3=Cc#80 -> MFX On/Off (Model)
+Name4=Cc#80 -> MFX On/Off (Drums)
+Name5=Cc#81 -> IFX1 On/Off
+Name6=Cc#82 -> IFX2 On/Off
+Name7=Cc#95->Route MAIN||IOFX1|OFX2
+Options0=Actv01Stop00OutO01StMa00000001label0006__cmt>
+Options1=Actv01Stop00OutO01StMa00000001zz=zz+32
+Options2=Actv01Stop00OutO01
+Options3=Actv01Stop00OutO01StMa00000001zz=zz+16
+Options4=Actv01Stop00OutO01StMa00000001zz=zz+55
+Options5=Actv01Stop01OutO01
+Options6=Actv01Stop01OutO01
+Options7=Actv01Stop00OutO00StMa00000003zz=zz+16yy=yy-1if(yy<0)yy=0
+Outgoing0=MID1F041100000005B1202zz0101yy00F7
+Outgoing1=MID1F041100000005B1204zz0101yy00F7
+Outgoing2=MID1F041100000005B1204zz0101yy00F7
+Outgoing3=MID1F041100000005B1202zz0101yy00F7
+Outgoing4=MID1F041100000005B1202zz0101yy00F7
+Outgoing5=MID1F041100000005B1202000401yy79F7
+Outgoing6=MID1F041100000005B1202000601yy77F7
+Outgoing7=MID1F041100000005B120200zz25yy00F7
+PresetSwitchIgnore=0
+
+[Preset.5]
+Active=1
+Comments=
+Incoming0=MID1F041100000005B1202000012wwvvF7
+Name=ZONE AUTO ASSIGN /PADS NOTES
+Name0=Reassign PADs zone to current selection
+Options0=Actv01Stop00OutO00StMa00000001zz=ww
+Outgoing0=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 00 00 03 01 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 02 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 03 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 04 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 05 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 06 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 07 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 08 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 09 zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 0A zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 0B zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 0C zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 0D zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 0E zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 0F zz 75 F7&#10;F0 41 10 00 00 00 5B 12 00 00 03 10 zz 75 F7</Raw></Outgoing>
+PresetSwitchIgnore=0
+
+[Preset.6]
+Active=1
+Comments=
+Incoming0=MID1MIDD000CScene changeF041100000005B1201000000552AF7
+Incoming1=MID1F041100000005B1202000012wwvvF7
+Incoming10=MID1F041100000005B1202000012wwvvF7
+Incoming11=MID1F041100000005B1202000012wwvvF7
+Incoming12=MID1F041100000005B1202000012wwvvF7
+Incoming13=MID1F041100000005B1202000012wwvvF7
+Incoming14=MID1F041100000005B1202000012wwvvF7
+Incoming15=MID1F041100000005B1202000012wwvvF7
+Incoming16=MID1F041100000005B1202000012wwvvF7
+Incoming17=MID1F041100000005B1202000012wwvvF7
+Incoming18=MID1F041100000005B1202000012wwvvF7
+Incoming2=MID1F041100000005B1202000012wwvvF7
+Incoming3=MID1F041100000005B1202000012wwvvF7
+Incoming4=MID1F041100000005B1202000012wwvvF7
+Incoming5=MID1F041100000005B1202000012wwvvF7
+Incoming6=MID1F041100000005B1202000012wwvvF7
+Incoming7=MID1F041100000005B1202000012wwvvF7
+Incoming8=MID1F041100000005B1202000012wwvvF7
+Incoming9=MID1F041100000005B1202000012wwvvF7
+Name=ZONE AUTO ASSIGN /SLIDERS|KNOBS
+Name0=On scene change, set z0=-1
+Name1=i0 = 0
+Name10=Set selected zone on
+Name11=Set selected zone on
+Name12=Set selected zone on
+Name13=Set selected zone on
+Name14=Set selected zone on
+Name15=Set selected zone on
+Name16=Set selected zone on
+Name17=Set selected zone on
+Name18=i0 = 0, z0=ww
+Name2=Set selected zone on
+Name3=Set selected zone on
+Name4=Set selected zone on
+Name5=Set selected zone on
+Name6=Set selected zone on
+Name7=Set selected zone on
+Name8=Set selected zone on
+Name9=Set selected zone on
+Options0=Actv01Stop00OutO00StMa00000002z0=-1label0031__log>Received scene change signal. Setting z0=-1
+Options1=Actv01Stop00OutO00StMa00000003i0=0label0006__cmt>label0015__cmt>//Log "z0=%z0%"
+Options10=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options11=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options12=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options13=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options14=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options15=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options16=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options17=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options18=Actv01Stop00OutO00StMa00000002i0=0z0=ww
+Options2=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options3=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options4=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options5=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options6=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options7=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options8=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Options9=Actv01Stop00OutO00StMa00000015yy=0label0006__cmt>label001C__cmt>// On teste la zone zzzz=i0i0=i0+1label0006__cmt>if(ww==zz)yy=1if(ww==zz)goto0002GOlabel0006__cmt>label0030__cmt>// We also remove previously selected zoneif(zz==z0)goto0002GOif(z0==-1)goto0002GOlabel0006__cmt>label003C__cmt>//Log "Exiting for i0=%i0%, zz=%zz%, z0=%z0%, ww=%ww%"label0006__cmt>noexecutelabel0006__cmt>label0006__cmt>label0002GOlabel0042__log>We set zone : zz=%zz%, on/off=%yy% i0=%i0%, z0=%z0%, ww=%ww%zz=zz+48
+Outgoing0=None
+Outgoing1=None
+Outgoing10=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing11=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing12=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing13=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing14=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing15=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing16=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing17=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing18=None
+Outgoing2=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing3=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing4=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing5=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing6=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing7=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing8=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+Outgoing9=MID3<Outgoing Action="MIDI"><Raw>F0 41 10 00 00 00 5B 12 02 00 zz 14 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 15 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 16 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 17 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 18 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 19 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1A yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1B yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1E yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 1F yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 20 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 21 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 22 yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 23 yy 31 F7&#10;&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2C yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 2D yy 31 F7&#10;F0 41 10 00 00 00 5B 12 02 00 zz 30 yy 31 F7</Raw></Outgoing>
+PresetSwitchIgnore=0
+
+[Preset.7]
+Active=1
+Comments=
+Incoming0=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming1=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming10=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming11=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming2=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming3=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming4=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming5=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming6=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming7=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming8=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Incoming9=MID3<Incoming Action="MIDI"><Simple Type="ProgramChange"><Channel var="zz" Type="SetVar"/><Value1 num="0x00" Type="Any"/></Simple></Incoming>
+Name=CC AUTO RESET TO #64 ON PC
+Name0=Auto reset
+Name1=Auto reset
+Name10=Auto reset
+Name11=Auto reset
+Name2=Auto reset
+Name3=Auto reset
+Name4=Auto reset
+Name5=Auto reset
+Name6=Auto reset
+Name7=Auto reset
+Name8=Auto reset
+Name9=Auto reset
+Options0=Actv01Stop00OutO00
+Options1=Actv01Stop00OutO00
+Options10=Actv01Stop00OutO00
+Options11=Actv01Stop00OutO00
+Options2=Actv01Stop00OutO00
+Options3=Actv01Stop00OutO00
+Options4=Actv01Stop00OutO00
+Options5=Actv01Stop00OutO00
+Options6=Actv01Stop00OutO00
+Options7=Actv01Stop00OutO00
+Options8=Actv01Stop00OutO00
+Options9=Actv01Stop00OutO00
+Outgoing0=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x47"/><Value2 num="0x40"/></Simple></Outgoing>
+Outgoing1=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x48"/><Value2 num="0x40"/></Simple></Outgoing>
+Outgoing10=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x5B"/><Value2 num="0x28"/></Simple></Outgoing>
+Outgoing11=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x5D"/><Value2 num="0x00"/></Simple></Outgoing>
+Outgoing2=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x49"/><Value2 num="0x40"/></Simple></Outgoing>
+Outgoing3=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x4A"/><Value2 num="0x40"/></Simple></Outgoing>
+Outgoing4=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x4B"/><Value2 num="0x40"/></Simple></Outgoing>
+Outgoing5=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x4C"/><Value2 num="0x40"/></Simple></Outgoing>
+Outgoing6=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x4D"/><Value2 num="0x40"/></Simple></Outgoing>
+Outgoing7=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x4E"/><Value2 num="0x40"/></Simple></Outgoing>
+Outgoing8=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x41"/><Value2 num="0x00"/></Simple></Outgoing>
+Outgoing9=MID3<Outgoing Action="MIDI"><Simple Type="ControlChange"><Channel var="zz"/><Value1 num="0x05"/><Value2 num="0x00"/></Simple></Outgoing>
+PresetSwitchIgnore=0
+
+[Preset.8]
+Active=0
+Comments=
+Incoming0=MID3<Incoming Action="MIDI"><Simple Type="ControlChange"><Channel num="15" Type="New Version Required"/><Value1 num="91" Type="New Version Required"/><Value2 num="127" setvar="yy" Type="New Version Required"/></Simple></Incoming>
+Name=AudioIn REV Level
+Name0=Audio In REVERB
+Options0=Actv01Stop01OutO00
+Outgoing0=MID1F041100000005B1200000B02yy00F7
+PresetSwitchIgnore=0
+
+[Project]
+DefaultInPorts=MIDA0001000CFANTOM-6 7 8
+DefaultOutPorts=MIDA0001000CFANTOM-6 7 8
+Version=2
+
+[Signatures]
+SigName-1=[Midi Translator Pro Internal]
+Signature-1=mY0iDE77OTHazfVeMEdzLph8ZajjPzXduklmsoPKOPfZWiEZzfBH2t/PvKJ2efc5W5pkt0AVofhF8snvAAIUAam4XvQIWNPJIHN2vyTlIsZ6tn4DYVgC5OlT41QVKXnth5N2dzX7Gcg39EznQBHAYr6dqJlpXFV71CmfdkQMkDo=
+SignedBy-1=Matthieu Thibaud
+
